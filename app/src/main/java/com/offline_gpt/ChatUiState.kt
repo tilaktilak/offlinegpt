@@ -1,4 +1,4 @@
-package com.google.mediapipe.examples.llminference
+package com.offlinegpt
 
 import androidx.compose.runtime.toMutableStateList
 

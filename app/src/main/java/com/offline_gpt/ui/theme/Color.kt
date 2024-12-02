@@ -1,4 +1,4 @@
-package com.google.mediapipe.examples.llminference.ui.theme
+package com.offlinegpt.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

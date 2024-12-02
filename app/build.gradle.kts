@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.google.mediapipe.examples.llminference"
+    namespace = "com.offlinegpt"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.google.mediapipe.examples.llminference"
+        applicationId = "com.offlinegpt"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

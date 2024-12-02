@@ -1,4 +1,4 @@
-package com.google.mediapipe.examples.llminference
+package com.offlinegpt
 
 import android.content.Context
 import com.google.mediapipe.tasks.genai.llminference.LlmInference
