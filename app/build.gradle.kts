@@ -51,6 +51,7 @@ android {
 
 dependencies {
 
+    implementation("com.appodeal.ads:sdk:3.4.0.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
@@ -65,6 +66,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     implementation ("com.google.mediapipe:tasks-genai:0.10.16")
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

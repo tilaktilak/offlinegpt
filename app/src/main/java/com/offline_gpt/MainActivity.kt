@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.appodeal.ads.Appodeal
 import com.offlinegpt.ui.theme.LLMInferenceTheme
 
 const val START_SCREEN = "start_screen"
@@ -32,23 +33,35 @@ const val CHAT_SCREEN = "chat_screen"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //Appodeal.initialize(
+        //    this,
+        //    "af209c119a686c8d8dc6f4dcb8ee76f6dd9e1c7f7ee22b3b",
+        //    Appodeal.INTERSTITIAL,
+        //    object : ApdInitializationCallback {
+        //        override fun onInitializationFinished(errors: List<ApdInitializationError>?) {
+        //            // Appodeal initialization finished
+        //        }
+        //    },
+        //)
+
         setContent {
             LLMInferenceTheme {
                 Scaffold(
-                    topBar = { AppBar() }
+                    topBar = { AppBar() },
                 ) { innerPadding ->
                     // A surface container using the 'background' color from the theme
                     Surface(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
+                        modifier =
+                            Modifier
+                                .fillMaxSize()
+                                .padding(innerPadding),
                         color = MaterialTheme.colorScheme.background,
                     ) {
                         val navController = rememberNavController()
 
                         NavHost(
                             navController = navController,
-                            startDestination = START_SCREEN
+                            startDestination = START_SCREEN,
                         ) {
                             composable(START_SCREEN) {
                                 LoadingRoute(
@@ -57,7 +70,7 @@ class MainActivity : ComponentActivity() {
                                             popUpTo(START_SCREEN) { inclusive = true }
                                             launchSingleTop = true
                                         }
-                                    }
+                                    },
                                 )
                             }
 
@@ -76,24 +89,27 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun AppBar() {
         Column(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             TopAppBar(
                 title = { Text(stringResource(R.string.app_name)) },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
-                ),
+                colors =
+                    TopAppBarDefaults.topAppBarColors(
+                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        titleContentColor = MaterialTheme.colorScheme.primary,
+                    ),
             )
             Box(
-                modifier = Modifier.background(MaterialTheme.colorScheme.surfaceContainer)
+                modifier = Modifier.background(MaterialTheme.colorScheme.surfaceContainer),
             ) {
                 Text(
                     text = stringResource(R.string.disclaimer),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.fillMaxWidth()
-                        .padding(8.dp)
+                    modifier =
+                        Modifier
+                            .fillMaxWidth()
+                            .padding(8.dp),
                 )
             }
         }

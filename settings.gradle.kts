@@ -4,6 +4,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
+        maven ( uri("https://artifactory.appodeal.com/appodeal-beta-public") )
     }
 }
 dependencyResolutionManagement {
@@ -12,6 +13,7 @@ dependencyResolutionManagement {
         mavenLocal()
         google()
         mavenCentral()
+        maven ( uri("https://artifactory.appodeal.com/appodeal-beta-public") )
     }
 }
 
