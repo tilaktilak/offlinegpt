@@ -33,16 +33,12 @@ const val CHAT_SCREEN = "chat_screen"
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //Appodeal.initialize(
-        //    this,
-        //    "af209c119a686c8d8dc6f4dcb8ee76f6dd9e1c7f7ee22b3b",
-        //    Appodeal.INTERSTITIAL,
-        //    object : ApdInitializationCallback {
-        //        override fun onInitializationFinished(errors: List<ApdInitializationError>?) {
-        //            // Appodeal initialization finished
-        //        }
-        //    },
-        //)
+        Appodeal.initialize(
+            this,
+            "af209c119a686c8d8dc6f4dcb8ee76f6dd9e1c7f7ee22b3b",
+            Appodeal.INTERSTITIAL,
+            null,
+        )
 
         setContent {
             LLMInferenceTheme {
