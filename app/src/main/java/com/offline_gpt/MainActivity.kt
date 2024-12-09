@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         Appodeal.initialize(
             this,
-            "af209c119a686c8d8dc6f4dcb8ee76f6dd9e1c7f7ee22b3b",
+            "98e6b2ae5f8337171f25c99bc66d92a5769bfad153777561",
             Appodeal.INTERSTITIAL,
             null,
         )

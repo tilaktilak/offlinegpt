@@ -1,5 +1,7 @@
 package com.offlinegpt
 
+import android.app.Activity
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,10 +23,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import com.appodeal.ads.Appodeal
 
 @Composable
 internal fun LoadingRoute(
-    onModelLoaded: () -> Unit = { }
+    onModelLoaded: () -> Unit = { },
 ) {
     val context = LocalContext.current.applicationContext
     var errorMessage by remember { mutableStateOf("") }
@@ -32,6 +35,9 @@ internal fun LoadingRoute(
     if (errorMessage != "") {
         ErrorMessage(errorMessage)
     } else {
+        Appodeal.show(LocalContext.current as Activity, Appodeal.INTERSTITIAL)
+
+
         LoadingIndicator()
     }
 
@@ -53,6 +59,7 @@ internal fun LoadingRoute(
 
 @Composable
 fun LoadingIndicator() {
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center

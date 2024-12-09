@@ -51,7 +51,12 @@ android {
 
 dependencies {
 
-    implementation("com.appodeal.ads:sdk:3.4.0.0")
+    implementation("com.appodeal.ads:sdk:3.4.0.0"){
+        exclude(group= "com.applovin.mediation", module= "google-adapter")
+        exclude(group= "org.bidon", module="admob-adapter")
+        exclude(group = "com.appodeal.ads.sdk.networks", module = "admob")
+        exclude(group = "com.google.android.gms", module = "play-services-ads")
+    }
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
     implementation("androidx.activity:activity-compose:1.8.2")
